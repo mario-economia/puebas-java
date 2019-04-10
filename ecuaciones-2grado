@@ -1,0 +1,29 @@
+package proyectosSencillitos; //¡Cuidado con esto!
+import java.util.Scanner;
+public class EcuacionesSegundoGrado {
+
+	public static void main(String[] args) {
+		Scanner entrada = new Scanner(System.in);
+		System.out.println("Introduzca el valor del coeficiente cuadrático: ");
+		double coefCuadratico = entrada.nextDouble();
+		System.out.println("Introduzca el valor del coeficiente lineal: ");
+		double coefLineal = entrada.nextDouble();
+		System.out.println("Introduzca el valor del término independiente: ");
+		double termIndependiente = entrada.nextDouble();
+		// ¿Tiene solución?
+		if (coefLineal * coefLineal > 4 * coefCuadratico * termIndependiente) { //discriminante positivo
+			System.out.println("La ecuación tiene dos soluciones.");
+			double discriminante = coefLineal * coefLineal - (4 * coefCuadratico * termIndependiente);
+			double resultadopositivo = (- coefLineal + Math.sqrt(discriminante)) / (2 * coefCuadratico);
+			double resultadonegativo = (- coefLineal - Math.sqrt(discriminante)) / (2 * coefCuadratico);
+			System.out.println("El resultado 'positivo' es: " + resultadopositivo);
+			System.out.println("El resultado 'negativo' es: " + resultadonegativo);
+		}if (coefLineal * coefLineal == 4 * coefCuadratico * termIndependiente) { //discriminante nulo
+			System.out.println("La ecuación tiene una única solución.");
+			double resultadounico = - coefLineal / 2 * coefCuadratico;
+			System.out.println("El resultado es: " + resultadounico);
+		}if (coefLineal * coefLineal < 4 * coefCuadratico * termIndependiente) { //discriminante negativo
+			System.out.println("La ecuación no tiene solución real.");
+		}
+	}
+}
