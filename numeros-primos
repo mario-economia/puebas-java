@@ -1,0 +1,27 @@
+package proyectosSencillitos; //¡Cuidado con esto!
+import java.util.Scanner;
+public class NumerosPrimos {
+
+    public static void main(String[] args) {
+        Scanner teclado = new Scanner(System.in);
+        System.out.println("Introduzca un número: ");
+        int entrada = teclado.nextInt();
+        boolean esPrimo = true;
+        int divisor = 2;
+        while (entrada > divisor) {
+            if (entrada % divisor == 0) { 
+                esPrimo = false;
+            }
+            divisor ++;
+        }
+        // Los mensajes van fuera del bucle
+        if (esPrimo) {
+            System.out.println("El número " + entrada + " es primo.");
+        }else {
+            System.out.println("El número " + entrada + " no es primo.");
+
+        }
+
+    }
+
+}
