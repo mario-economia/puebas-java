@@ -1,0 +1,31 @@
+package curso;
+import java.util.Scanner;
+public class Aplicacion {
+
+	public static void main(String[] args) {
+		int aleatorio = (int)(Math.random() * 1000 + 1);
+		int intentonas = 0;
+		int limiteInf = 1;
+		int limiteSup = 1000;
+		int entrada1 = 0;
+
+		while (entrada1 != aleatorio) {			
+			System.out.println("Introduzca un número entre " + limiteInf + " y " + limiteSup + " :");
+			Scanner entrada = new Scanner(System.in);
+			entrada1 = entrada.nextInt();
+			intentonas++;
+			if(entrada1 == aleatorio) {
+				System.out.println("¡¡Has acertado!!");
+				System.out.println("Has realizado " + intentonas + " intentos");
+				break;
+			}
+      else {
+				if (entrada1 < aleatorio) {
+					limiteInf = entrada1;
+				}else {
+					limiteSup = entrada1;
+				}
+			}
+		}
+	}
+}
