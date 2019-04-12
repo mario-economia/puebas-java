@@ -1,0 +1,13 @@
+package zara;
+
+public class Matematicas {
+  public int[][] eye(int filas, int columnas) {
+		int[][] matriz = new int[filas][columnas];
+		for (int f = 0; f < filas; f++) {
+			for (int c = 0; c < columnas; c++) {
+				matriz[f][c] = (f == c) ? 1 : 0;
+			}
+		}
+		return matriz;
+	}
+}
