@@ -1,0 +1,14 @@
+package proyectosSencillitos; //Cuidado con esto
+
+public class Binario2Decimal {
+	public static int Bin2Dec (int entradaBin) {
+		String entradaLetras = String.valueOf(entradaBin);
+		int sumaAcumulada = 0;
+		for (int i = 0; i < entradaLetras.length(); i++) {
+			char elementoi = entradaLetras.charAt(entradaLetras.length() - (i + 1)); //Este char
+			sumaAcumulada += Character.getNumericValue(elementoi) * Math.pow(2, i);
+		}
+		System.out.print(sumaAcumulada);
+		return sumaAcumulada;
+	}
+}
