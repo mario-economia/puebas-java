@@ -1,53 +1,11 @@
 package proyectosSencillitos; //¡Cuidado con esto!
 
 public class Musical {
-	public static String[] escalaMusical (int notaComienzo) {
-		String[] octava = { "Do", "Do sostenido", "Re", "Re sostenido", "Mi", 
-				"Fa", "Fa sostenido", "Sol", "Sol sostenido", "La", "La sostenido", "Si", 
-				"Do·", "Do· sostenido", "Re·", "Re· sostenido", "Mi·", 
-				"Fa·", "Fa· sostenido", "Sol·", "Sol· sostenido", "La·", "La· sostenido", "Si·"};
-		
-		System.out.println("Se muestra la escala de " + octava[notaComienzo] + " :");
-		float[] relacionEscala = {0f, 1f, 1f, 0.5f, 1f, 1f, 1f, 0.5f};
-		int[] relacionEAcumulada = {0, 0, 0, 0, 0, 0, 0, 0};
-		String[] octavaSolicitada = new String[8];
-		for (int i = 0; i < relacionEscala.length; i++) {
-			notaComienzo += relacionEscala[i] * 2;
-			relacionEAcumulada[i] = notaComienzo;
-		}
-		for (int j = 0; j < relacionEAcumulada.length; j++) {
-			octavaSolicitada[j] = octava[relacionEAcumulada[j]];
-			System.out.println(octavaSolicitada[j]);
-		}
-		return octavaSolicitada;
-	}
-	
 	public static String[] escalaMusical () {
-		String[] octava = { "Do", "Do sostenido", "Re", "Re sostenido", "Mi", 
-				"Fa", "Fa sostenido", "Sol", "Sol sostenido", "La", "La sostenido", "Si", 
-				"Do·", "Do· sostenido", "Re·", "Re· sostenido", "Mi·", 
-				"Fa·", "Fa· sostenido", "Sol·", "Sol· sostenido", "La·", "La· sostenido", "Si·"};
-		int notaComienzo = 0;
-		System.out.println("Se muestra la escala de " + octava[notaComienzo] + " :");
-		float[] relacionEscala = {0f, 1f, 1f, 0.5f, 1f, 1f, 1f, 0.5f};
-		int[] relacionEAcumulada = {0, 0, 0, 0, 0, 0, 0, 0};
-		String[] octavaSolicitada = new String[8];
-		for (int i = 0; i < relacionEscala.length; i++) {
-			notaComienzo += relacionEscala[i] * 2;
-			relacionEAcumulada[i] = notaComienzo;
-		}
-		for (int j = 0; j < relacionEAcumulada.length; j++) {
-			octavaSolicitada[j] = octava[relacionEAcumulada[j]];
-			System.out.println(octavaSolicitada[j]);
-		}
-		return octavaSolicitada;
+		return escalaMusical(0);
 	}
 	
 	public static String[] escalaMusical (String notaEntrada) {
-		String[] octava = { "Do", "Do sostenido", "Re", "Re sostenido", "Mi", 
-				"Fa", "Fa sostenido", "Sol", "Sol sostenido", "La", "La sostenido", "Si", 
-				"Do·", "Do· sostenido", "Re·", "Re· sostenido", "Mi·", 
-				"Fa·", "Fa· sostenido", "Sol·", "Sol· sostenido", "La·", "La· sostenido", "Si·"};
 		int notaComienzo;
 		switch (notaEntrada) {
 		case "Do":
@@ -75,6 +33,14 @@ public class Musical {
 			notaComienzo = 0;
 			break;
 		}
+		return escalaMusical(notaComienzo);
+	}
+	
+	public static String[] escalaMusical (int notaComienzo) {
+		String[] octava = { "Do", "Do sostenido", "Re", "Re sostenido", "Mi", 
+				"Fa", "Fa sostenido", "Sol", "Sol sostenido", "La", "La sostenido", "Si", 
+				"Do·", "Do· sostenido", "Re·", "Re· sostenido", "Mi·", 
+				"Fa·", "Fa· sostenido", "Sol·", "Sol· sostenido", "La·", "La· sostenido", "Si·"};
 		
 		System.out.println("Se muestra la escala de " + octava[notaComienzo] + " :");
 		float[] relacionEscala = {0f, 1f, 1f, 0.5f, 1f, 1f, 1f, 0.5f};
