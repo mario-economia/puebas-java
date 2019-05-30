@@ -1,0 +1,29 @@
+//package proyectosSencillitos;
+
+import java.util.Arrays;
+
+public class LeyDHont {
+
+	public static int[] LeydHont (int[] votos, int escannos) {
+		int[][] mtrParties = new int[votos.length][escannos];
+		int[] arCocientes = new int[votos.length*escannos];
+		int[] rdoFinal = new int[votos.length];
+		for (int i=0; i < mtrParties.length; i++) {
+			for (int m=0; m < mtrParties[i].length; m++) {
+				mtrParties[i][m] = votos[i]/(m+1);
+				arCocientes[i*escannos + m] = votos[i]/(m+1);
+			}
+		}
+		Arrays.sort(arCocientes);
+		int nmrCorte = arCocientes[arCocientes.length - escannos];
+		int contador = 1;
+		for (int i=0; i < mtrParties.length; i++) {
+			for (int m=0; m < mtrParties[i].length; m++) {
+				if(mtrParties[i][m] >= nmrCorte) {
+					rdoFinal[i] += contador;
+				}
+			}
+		}
+		return rdoFinal;
+	}
+}
