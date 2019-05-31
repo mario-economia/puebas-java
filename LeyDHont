@@ -16,11 +16,10 @@ public class LeyDHont {
 		}
 		Arrays.sort(arCocientes);
 		int nmrCorte = arCocientes[arCocientes.length - escannos];
-		int contador = 1;
 		for (int i=0; i < mtrParties.length; i++) {
 			for (int m=0; m < mtrParties[i].length; m++) {
 				if(mtrParties[i][m] >= nmrCorte) {
-					rdoFinal[i] += contador;
+					rdoFinal[i] ++;
 				}
 			}
 		}
